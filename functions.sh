@@ -1,11 +1,8 @@
 function google() {
   open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q=$*";
 }
-function ghug() {
+function github() {
   open /Applications/Google\ Chrome.app/ "https://github.com/$*";
-}
-function youtube() {
-  open /Applications/Google\ Chrome.app/ "https://www.youtube.com/results?search_query=$*";
 }
 function port-ls() {
   lsof -i ":$1"
@@ -13,16 +10,6 @@ function port-ls() {
 
 # mkdir and cd
 function take() { mkdir -p "$@" && cd "$_";}
-
-# tree
-############################
-# useage treel 2 ~/someDir
-function treel() {
-     tree -L $1 $2
-}
-function treela() {
-     tree -La $1 $2
-}
 
 # Go to the open Finder window's path
 function cdf {
@@ -32,16 +19,6 @@ function cdf {
     else
         echo -e 'There are no Finder windows!' >$2
     fi
-}
-
-# Full screen Vim help page.
-function :h () {
-    vim +"h $1" +only;
-}
-
-# Copy current git commit sha1 to the clipboard.
-function gcopy() {
-    git rev-parse --short @ | tr -d '\n' | pbcopy && echo "Copied `pbpaste`"
 }
 
 # whois a domain or a URL
@@ -103,25 +80,6 @@ if [ $? -eq 0 ]; then
 	}
 fi;
 
-# Start an HTTP server from a directory, optionally specifying the port
-function pserver() {
-	local port="${1:-8000}";
-	sleep 1 && open "http://localhost:${port}/" &
-	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
-}
-
-# function pserver() {
-#   if [ -z "$1" ]; then
-#     port=8000
-#   else
-#     port=$1
-#   fi
-#   echo "Serving HTTP on: http://localhost:$port"
-#   python -m SimpleHTTPServer $1
-# }
-
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
@@ -152,7 +110,7 @@ function codepoint() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 function tre() {
-	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+	tree -aC -I '.git|node_modules|dist|build' --dirsfirst "$@" | less -FRNX;
 }
 
 
