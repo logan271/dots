@@ -10,7 +10,6 @@ alias rrm="rm -rf"
 alias typo="open -a typora"
 alias p="pnpm"
 alias cpp="cp -Rp"
-alias code-settings="code $HOME/Library/Application\ Support/Code/User"
 alias finder="open -a Finder"
 alias if0="ifconfig en0"
 
