@@ -7,7 +7,9 @@
 " change the leader key from "\" to ";" 
 let mapleader = ";"
 set shiftwidth=2
+set tabstop=2
 set autoindent
+set expandtab
 set smartindent
 " system clipboard support
 set clipboard+=unnamed
