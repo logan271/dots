@@ -16,8 +16,21 @@ set clipboard+=unnamed
 set shiftround    "round > and < to mutipuls of shift width*****
 " disable search highlight
 " set nohlsearch
+"
 " neovim, block and blink cursor
-set guicursor=i:block,a:blinkon100
+" set guicursor=i:block,a:blinkon100
+" Use a line cursor within insert mode and a block cursor everywhere else.
+" Reference chart of values:
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+let &t_SI.="\e[1 q" "SI = INSERT mode
+let &t_SR.="\e[1 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 " turn on line number
 set number
 set eol
