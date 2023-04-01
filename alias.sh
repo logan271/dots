@@ -1,28 +1,27 @@
-alias sudo='sudo ' # Enable aliases to be sudo’ed
 alias vim="nvim"
 alias c="cargo"
 alias ls="ls -GAp"
 alias ls-path="echo $PATH | tr ':' '\n'"
 alias vbundles="vim ~/.vimrc.bundles.local"
 alias desk="cd ~/Desktop"
+alias pserver="python3 -m http.server"
 alias rrm="rm -rf"
 alias typo="open -a typora"
 alias p="pnpm"
 alias cpp="cp -Rp"
 alias finder="open -a Finder"
 alias if0="ifconfig en0"
+alias code-settings="code $HOME/Library/Application\ Support/Code/User/"
 
 # git
 alias gaa="git add --all"
 alias gmm="git commit -m"
 alias gma='git commit --amend'
+alias gdc='git diff --cached'
 
 # fzf
 alias f="fzf"
 alias ft="fzf-tmux"
-alias fopen='open $(fzf)'
-alias fv='vim $(fzf)'
-alias fc='code $(fzf)'
 
 # Recursively delete `.DS_Store` files
 alias cleanup_DS_Store="find . -type f -name '*.DS_Store' -ls -delete"
@@ -63,7 +62,7 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias reload="exec $SHELL -l"
 
 fgitd() {
-  preview="git diff $@ --color=always -- {-1} | diff-so-fancy"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview
+	preview="git diff $@ --color=always -- {-1} | diff-so-fancy"
+	git diff $@ --name-only | fzf -m --ansi --preview $preview
 }
 alias fgd=fgitd

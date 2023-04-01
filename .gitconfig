@@ -240,3 +240,5 @@ path = ~/.gitconfig.work
 	program = gpg
 [pull]
 	rebase = true
+[safe]
+	directory = /opt/homebrew/Library/Taps/homebrew/homebrew-services

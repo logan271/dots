@@ -8,7 +8,7 @@ export N_PREFIX="$HOME/n"
 export PATH="$N_PREFIX/bin:$PATH"
 
 # trueblock
-export PATH="$HOME/pers/trueblocks-core/bin:$PATH"
+export PATH="$HOME/dev/trueblocks-core/bin:$PATH"
 
 # yarn
 export PATH="$PATH:$HOME/.yarn/bin"
