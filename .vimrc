@@ -2,9 +2,6 @@
 " Minimal vim configration
 """"""""""""""""""""""""""""""""""""""""""
 
-" Minimal vim configration
-
-" change the leader key from "\" to ";" 
 let mapleader = ";"
 set shiftwidth=2
 set tabstop=2

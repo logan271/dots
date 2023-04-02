@@ -1,8 +1,6 @@
 export USER_NAME="Logan"
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/bin"
-
 # n: node package manager
 export N_PREFIX="$HOME/n"
 export PATH="$N_PREFIX/bin:$PATH"
@@ -16,8 +14,6 @@ export PATH="$PATH:$HOME/.yarn/bin"
 # Make vim the default editor.
 export EDITOR="vim"
 export editor="vim"
-
-# export TERM=xterm-256color
 
 # fzf setting
 # https://github.com/junegunn/fzf#preview-window
@@ -46,9 +42,6 @@ export LESS_TERMCAP_md="${yellow}";
 
 # https://stackoverflow.com/a/55993078/18678288
 export GPG_TTY=$(tty)
-. "$HOME/.cargo/env"
 
-# golang proxy;
-# Set the GOPROXY environment variable
-export GOPROXY=https://goproxy.io,direct
+. "$HOME/.cargo/env"
 

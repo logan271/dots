@@ -1,13 +1,12 @@
-alias vim="nvim"
+#!/bin/bash
+alias vim=nvim
 alias c="cargo"
+alias p="pnpm"
 alias ls="ls -GAp"
-alias ls-path="echo $PATH | tr ':' '\n'"
-alias vbundles="vim ~/.vimrc.bundles.local"
+alias lspath="echo $PATH | tr ':' '\n'"
 alias desk="cd ~/Desktop"
-alias pserver="python3 -m http.server"
 alias rrm="rm -rf"
 alias typo="open -a typora"
-alias p="pnpm"
 alias cpp="cp -Rp"
 alias finder="open -a Finder"
 alias if0="ifconfig en0"
@@ -60,9 +59,3 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-fgitd() {
-	preview="git diff $@ --color=always -- {-1} | diff-so-fancy"
-	git diff $@ --name-only | fzf -m --ansi --preview $preview
-}
-alias fgd=fgitd
