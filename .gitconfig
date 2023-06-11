@@ -1,17 +1,15 @@
-[includeIf "gitdir:~/dev/"] 
-path = ~/.gitconfig.pers
-[includeIf "gitdir:~/.config/"] 
-path = ~/.gitconfig.pers
-[includeIf "gitdir:~/dots/"] 
-path = ~/.gitconfig.pers
-[includeIf "gitdir:~/work/"]
-path = ~/.gitconfig.work
-
+[user]
+email = logan.luo@cronoslabs.org
+name = Logan Luo 
+signingkey = B5D9D4E5F4387CB2
+[commit]
+	gpgsign = true
 [core]
 	editor = vim
 	autocrlf = input
 	excludesfile = $HOME/.gitignore
   ignorecase = false
+	sshCommand = "ssh -i ~/.ssh/logan.cronos"
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
@@ -106,7 +104,7 @@ path = ~/.gitconfig.work
 			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 		fi \
 	}; f"
-
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
 [apply]
 
 	# Detect whitespace errors when applying a patch

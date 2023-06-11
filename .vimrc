@@ -32,6 +32,8 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 set number
 set eol
 set encoding=utf8
+" turnoff bell sound
+set belloff=all
 syntax on
 filetype plugin on
 
