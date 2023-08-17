@@ -1,13 +1,11 @@
 export USER_NAME="Logan"
 export ZSH="$HOME/.oh-my-zsh"
 
-# n: node package manager
-export N_PREFIX="$HOME/n"
-export PATH="$N_PREFIX/bin:$PATH"
+export PATH="$PATH:$N_PREFIX/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # trueblock
-export PATH="$HOME/dev/trueblocks-core/bin:$PATH"
-
+export PATH="$PATH:$HOME/dev/trueblocks-core/bin"
 # yarn
 export PATH="$PATH:$HOME/.yarn/bin"
 
@@ -28,11 +26,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # by setting the MANPAGER environment variable:
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
-export PYTHONIOENCODING='UTF-8';
-export PATH="${PATH}:/Users/loganluo/Library/Python/3.8/bin"
-export PYTHONPATH="${PYTHONPATH}:/Users/loganluo/Library/Python/3.8/bin"
-
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
@@ -42,6 +35,7 @@ export LESS_TERMCAP_md="${yellow}";
 
 # https://stackoverflow.com/a/55993078/18678288
 export GPG_TTY=$(tty)
+
 
 . "$HOME/.cargo/env"
 

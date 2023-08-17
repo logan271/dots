@@ -10,6 +10,10 @@ signingkey = B5D9D4E5F4387CB2
 	excludesfile = $HOME/.gitignore
   ignorecase = false
 	sshCommand = "ssh -i ~/.ssh/logan.cronos"
+# https://github.com/ohmyzsh/ohmyzsh/issues/10175#issuecomment-1011985122
+; [oh-my-zsh]
+;      hide-status = 1
+;      hide-dirty = 1
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
