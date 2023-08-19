@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="$PATH:$N_PREFIX/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH=$PATH:/opt/homebrew/bin
 
 # trueblock
 export PATH="$PATH:$HOME/dev/trueblocks-core/bin"
@@ -39,3 +40,5 @@ export GPG_TTY=$(tty)
 
 . "$HOME/.cargo/env"
 
+
+export PATH="$PATH:/Users/logan/.foundry/bin"

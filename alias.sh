@@ -1,5 +1,6 @@
 #!/bin/bash
 alias vim=nvim
+alias v="lvim"
 alias c="cargo"
 alias p="pnpm"
 alias ls="ls -GAp"

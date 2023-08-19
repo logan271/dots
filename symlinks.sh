@@ -8,6 +8,9 @@ ln -sf "$DOTS_PATH/.zshenv" "$HOME/.zshenv"
 ln -sf "$DOTS_PATH/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$DOTS_PATH/tmuxinator" "$HOME/.config/tmuxinator"
 
+# vim
+ln -sf "$DOTS_PATH/.vimrc" "$HOME/.vimrc"
+
 # git
 ln -sf "$DOTS_PATH/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTS_PATH/.gitignore" "$HOME/.gitignore"
